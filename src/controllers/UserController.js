@@ -1,5 +1,6 @@
 const CreateUserService = require('../services/UserServices/CreateUserService');
 const SignIninUserService = require('../services/UserServices/LoginUserService');
+const FindOneUserService = require('../services/UserServices/FindOneUserService');
 
 
 class UserController{
@@ -37,6 +38,23 @@ class UserController{
 
             return response.status(400).json({
                 message:err.message||"Unexpected error"
+            })
+        }
+    }
+
+    async handleGetIdUser (request,response){
+        const {id} = request.params;
+
+        const findOneUserService = new FindOneUserService();
+
+        try{
+            const user =await findOneUserService.execute(id);
+            
+            return response.status(200).json(user)
+        }catch(err){
+            
+            return response.status(400).json({
+                message:err.message || "Unexpected error"
             })
         }
     }
