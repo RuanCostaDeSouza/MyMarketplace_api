@@ -19,10 +19,19 @@ install all dependencies using:
 
 npm install
 yarn add
-With the dependencies installed, just run the command below depending on the package manager of your choice
 
-npm run dev
+With the dependencies installed, just run the commands below depending on your preferred package manager
+
+yarn sequelize db:create     // create database
+yarn sequelize db:migrate    // create tables
+yarn sequelize db:seed:all   // run seeders   
 yarn dev
+
+npm run sequelize db:create     // create database
+npm run sequelize db:migrate    // create tables
+npm run sequelize db:seed:all   // run seeders   
+npm run dev
+
 API will be running on port 3030 of your localhost
 
 📦 Development
