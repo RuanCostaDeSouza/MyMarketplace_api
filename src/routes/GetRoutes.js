@@ -10,7 +10,4 @@ const GetRoutes = Express.Router();
 GetRoutes
     .get('/api/findall/products',productController.handleReturnProductList)
     .get('/api/findone/user/:id',userController.handleGetIdUser)
-    
-
-
 module.exports = GetRoutes

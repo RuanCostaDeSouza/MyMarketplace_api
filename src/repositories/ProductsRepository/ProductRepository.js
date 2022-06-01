@@ -6,6 +6,11 @@ class ProductRepositoty{
 
         return products
     }
+    async findOne (id){
+        const product = await ProductModel.findByPk(id);
+
+        return product
+    }
 }
 
 module.exports = ProductRepositoty
